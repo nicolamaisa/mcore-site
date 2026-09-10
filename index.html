@@ -3,191 +3,75 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#090c12" />
-  <meta name="description" content="MCORE — design, tecnologia e sistemi costruiti con precisione." />
-  <title>MCORE — Design. Technology. Systems.</title>
+  <meta name="theme-color" content="#080b11" />
+  <meta name="description" content="MCORE — realtà indipendente orientata a progettazione, tecnologia e sistemi digitali." />
+  <title>MCORE</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <style>
     :root {
-      --bg: #080b11;
-      --bg-soft: #0e131c;
-      --card: rgba(255,255,255,.055);
-      --border: rgba(255,255,255,.10);
-      --text: #f5f7fb;
-      --muted: #9ba7b7;
-      --blue: #0b75ff;
-      --blue-2: #31a1ff;
-      --graphite: #242a33;
-      --max: 1180px;
+      --bg:#080b11;
+      --surface:#0d121a;
+      --text:#f3f6fa;
+      --muted:#9aa6b5;
+      --line:rgba(255,255,255,.09);
+      --blue:#0878ff;
+      --max:1120px;
     }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--text);
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
       background:
-        radial-gradient(circle at 70% 16%, rgba(11,117,255,.16), transparent 28rem),
-        radial-gradient(circle at 8% 78%, rgba(49,161,255,.07), transparent 24rem),
+        radial-gradient(circle at 76% 14%,rgba(8,120,255,.12),transparent 28rem),
         var(--bg);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      -webkit-font-smoothing: antialiased;
+      color:var(--text);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      -webkit-font-smoothing:antialiased;
     }
-
-    a { color: inherit; text-decoration: none; }
-    .shell { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
-
-    header {
-      position: fixed;
-      inset: 0 0 auto;
-      z-index: 20;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(8,11,17,.86), rgba(8,11,17,.40));
-      border-bottom: 1px solid rgba(255,255,255,.05);
-    }
-    nav { height: 76px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
-    .brand { display:flex; align-items:center; gap:13px; font-weight:800; letter-spacing:.28em; font-size:.93rem; }
-    .mini-mark { width:42px; height:30px; display:block; }
-    .nav-links { display:flex; align-items:center; gap:28px; color:var(--muted); font-size:.92rem; }
-    .nav-links a { transition: color .2s ease; }
-    .nav-links a:hover { color:var(--text); }
-
-    main { overflow:hidden; }
-    .hero {
-      min-height: 100svh;
-      display:grid;
-      place-items:center;
-      padding: 130px 0 70px;
-    }
-    .hero-grid {
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: clamp(50px, 8vw, 110px);
-      align-items:center;
-    }
-    .eyebrow {
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      color:#b8c3d0;
-      text-transform:uppercase;
-      letter-spacing:.22em;
-      font-size:.72rem;
-      font-weight:700;
-      margin-bottom:24px;
-    }
-    .eyebrow::before { content:""; width:30px; height:1px; background:var(--blue-2); }
-    h1 {
-      margin:0;
-      font-size:clamp(3.6rem, 8vw, 7.4rem);
-      line-height:.9;
-      letter-spacing:-.065em;
-      max-width:8ch;
-    }
-    .gradient-text {
-      background: linear-gradient(110deg, #fff 15%, #b8d6ff 58%, #0b75ff 120%);
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-    .lead {
-      margin:30px 0 0;
-      max-width:620px;
-      color:var(--muted);
-      font-size:clamp(1.05rem, 2vw, 1.22rem);
-      line-height:1.7;
-    }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:34px; }
-    .btn {
-      display:inline-flex; align-items:center; justify-content:center;
-      min-height:50px; padding:0 22px; border-radius:999px;
-      font-weight:700; font-size:.92rem;
-      border:1px solid var(--border); transition:.22s ease;
-    }
-    .btn-primary { background:#f5f7fb; color:#070a10; border-color:#f5f7fb; }
-    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 30px rgba(255,255,255,.10); }
-    .btn-ghost:hover { background:rgba(255,255,255,.06); transform:translateY(-2px); }
-
-    .logo-stage {
-      position:relative;
-      aspect-ratio:1/1;
-      display:grid;
-      place-items:center;
-    }
-    .halo {
-      position:absolute;
-      width:72%; aspect-ratio:1;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(11,117,255,.22), rgba(11,117,255,.02) 54%, transparent 70%);
-      filter:blur(6px);
-    }
-    .logo-card {
-      width:100%;
-      max-width:520px;
-      aspect-ratio:1.13/1;
-      display:grid;
-      place-items:center;
-      border:1px solid var(--border);
-      border-radius:36px;
-      background:linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
-      box-shadow:0 30px 100px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.08);
-      transform:rotate(-2deg);
-    }
-    .logo-card svg { width:78%; overflow:visible; filter:drop-shadow(0 18px 34px rgba(0,0,0,.26)); }
-
-    section { padding:110px 0; }
-    .section-kicker { color:var(--blue-2); text-transform:uppercase; letter-spacing:.20em; font-size:.72rem; font-weight:800; }
-    h2 { font-size:clamp(2.2rem, 5vw, 4.4rem); line-height:1.02; letter-spacing:-.045em; margin:14px 0 22px; max-width:12ch; }
-    .section-copy { color:var(--muted); line-height:1.75; font-size:1.06rem; max-width:720px; }
-
-    .pillars { margin-top:54px; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-    .pillar {
-      padding:28px;
-      min-height:230px;
-      border:1px solid var(--border);
-      border-radius:24px;
-      background:var(--card);
-      transition:.25s ease;
-    }
-    .pillar:hover { transform:translateY(-5px); border-color:rgba(49,161,255,.28); background:rgba(255,255,255,.07); }
-    .num { color:#6f7b8c; font-size:.78rem; letter-spacing:.16em; font-weight:800; }
-    .pillar h3 { margin:42px 0 12px; font-size:1.3rem; }
-    .pillar p { margin:0; color:var(--muted); line-height:1.65; }
-
-    .manifesto {
-      position:relative;
-      border-top:1px solid var(--border);
-      border-bottom:1px solid var(--border);
-      background:linear-gradient(180deg, rgba(255,255,255,.025), transparent);
-    }
-    .manifesto blockquote {
-      margin:0;
-      max-width:1000px;
-      font-size:clamp(2rem, 5vw, 4.9rem);
-      line-height:1.05;
-      letter-spacing:-.045em;
-      font-weight:720;
-    }
-    .manifesto span { color:#657082; }
-
-    footer { padding:42px 0 52px; color:var(--muted); }
-    .footer-row { display:flex; justify-content:space-between; align-items:center; gap:24px; border-top:1px solid var(--border); padding-top:28px; font-size:.88rem; }
-
-    @media (max-width: 820px) {
-      .nav-links a:not(:last-child) { display:none; }
-      .hero-grid { grid-template-columns:1fr; }
-      .hero { padding-top:125px; }
-      .hero-copy { text-align:left; }
-      .logo-stage { order:-1; max-width:470px; margin:0 auto; width:100%; }
-      .pillars { grid-template-columns:1fr; }
-      .pillar { min-height:180px; }
-      .pillar h3 { margin-top:28px; }
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .logo-card { animation:float 7s ease-in-out infinite; }
-      @keyframes float { 0%,100% { transform:translateY(0) rotate(-2deg); } 50% { transform:translateY(-10px) rotate(-1deg); } }
+    a{color:inherit;text-decoration:none}
+    .shell{width:min(calc(100% - 40px),var(--max));margin:auto}
+    header{position:fixed;inset:0 0 auto;z-index:10;background:rgba(8,11,17,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.24em;font-size:.9rem}
+    .brand svg{width:42px;height:30px}
+    .nav{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:.9rem}
+    .nav a:hover{color:var(--text)}
+    main{overflow:hidden}
+    .hero{min-height:88svh;display:grid;align-items:center;padding:130px 0 80px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(50px,8vw,110px);align-items:center}
+    .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:700;color:#aeb8c6;margin-bottom:22px}
+    h1{margin:0;max-width:10ch;font-size:clamp(3.4rem,7vw,6.8rem);line-height:.94;letter-spacing:-.055em}
+    h1 span{color:var(--blue)}
+    .lead{max-width:650px;margin:28px 0 0;color:var(--muted);font-size:clamp(1.05rem,2vw,1.22rem);line-height:1.72}
+    .mark-wrap{display:grid;place-items:center;min-height:380px}
+    .mark{width:min(100%,470px);filter:drop-shadow(0 30px 60px rgba(0,0,0,.28))}
+    section{padding:96px 0}
+    .line{border-top:1px solid var(--line)}
+    .section-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px}
+    .label{text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:800;color:var(--blue)}
+    h2{margin:0 0 24px;font-size:clamp(2rem,4.5vw,3.8rem);letter-spacing:-.04em;line-height:1.04}
+    p{margin:0;color:var(--muted);line-height:1.75}
+    .copy{max-width:720px;font-size:1.05rem}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:52px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+    .value{background:var(--surface);padding:30px;min-height:190px}
+    .value b{display:block;margin-bottom:14px;font-size:1.08rem}
+    .value p{font-size:.95rem}
+    .contact{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
+    .contact h2{max-width:12ch;margin-bottom:0}
+    .contact-note{max-width:480px}
+    footer{padding:34px 0 46px;color:#7f8a99;font-size:.86rem}
+    .footer-row{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:800px){
+      .nav a:not(:last-child){display:none}
+      .hero-grid,.section-grid{grid-template-columns:1fr}
+      .hero{padding-top:112px}
+      .mark-wrap{order:-1;min-height:auto}
+      .mark{max-width:390px}
+      .values{grid-template-columns:1fr}
+      .contact{display:block}
+      .contact-note{margin-top:28px}
+      .footer-row{flex-direction:column}
     }
   </style>
 </head>
@@ -196,17 +80,16 @@
   <div class="shell">
     <nav aria-label="Navigazione principale">
       <a class="brand" href="#top" aria-label="MCORE home">
-        <svg class="mini-mark" viewBox="0 0 120 80" aria-hidden="true">
-          <path d="M12 61V24Q12 12 24 12Q30 12 36 18L60 42" fill="none" stroke="#2f3640" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M60 42L84 18Q90 12 96 12Q108 12 108 24V61" fill="none" stroke="#2f3640" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M18 18L102 62" fill="none" stroke="#0b75ff" stroke-width="15" stroke-linecap="round"/>
+        <svg viewBox="0 0 120 80" aria-hidden="true">
+          <path d="M13 58V25Q13 13 25 13Q31 13 37 19L60 42L83 19Q89 13 95 13Q107 13 107 25V58" fill="none" stroke="#2f3640" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19 18L101 61" fill="none" stroke="#0878ff" stroke-width="15" stroke-linecap="round"/>
         </svg>
         <span>MCORE</span>
       </a>
-      <div class="nav-links">
-        <a href="#about">Identità</a>
-        <a href="#principles">Approccio</a>
-        <a href="https://github.com/nicolamaisa" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <div class="nav">
+        <a href="#mcore">MCORE</a>
+        <a href="#approccio">Approccio</a>
+        <a href="#contatti">Contatti</a>
       </div>
     </nav>
   </div>
@@ -215,68 +98,53 @@
 <main id="top">
   <section class="hero">
     <div class="shell hero-grid">
-      <div class="hero-copy">
-        <div class="eyebrow">Nicola Maisano · Independent Studio</div>
-        <h1>Built from the <span class="gradient-text">core.</span></h1>
-        <p class="lead">MCORE è il punto d'incontro tra progettazione, tecnologia e sistemi digitali. Idee diverse, costruite con lo stesso principio: chiarezza, struttura e attenzione ai dettagli.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#about">Scopri MCORE</a>
-          <a class="btn btn-ghost" href="https://github.com/nicolamaisa" target="_blank" rel="noreferrer">Esplora i progetti ↗</a>
-        </div>
+      <div>
+        <div class="eyebrow">MCORE · Nicola Maisano</div>
+        <h1>Struttura. Precisione. <span>Evoluzione.</span></h1>
+        <p class="lead">MCORE è una realtà indipendente orientata alla progettazione, alla tecnologia e allo sviluppo di sistemi digitali. Un'identità costruita attorno a un principio semplice: partire dal nucleo del problema e costruire da lì.</p>
       </div>
+      <div class="mark-wrap" aria-label="Monogramma MCORE">
+        <svg class="mark" viewBox="0 0 640 470" role="img" aria-label="Monogramma NM MCORE">
+          <defs>
+            <linearGradient id="dark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b414a"/><stop offset="1" stop-color="#171b22"/></linearGradient>
+            <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1688ff"/><stop offset=".55" stop-color="#0878ff"/><stop offset="1" stop-color="#0454ca"/></linearGradient>
+          </defs>
+          <path d="M100 334V137Q100 82 150 82Q173 82 194 104L320 235L446 104Q467 82 490 82Q540 82 540 137V334Q540 389 490 389Q467 389 446 367L320 235L194 367Q173 389 150 389Q100 389 100 334Z" fill="none" stroke="url(#dark)" stroke-width="78" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M151 103L489 367" fill="none" stroke="url(#blue)" stroke-width="78" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
 
-      <div class="logo-stage" aria-label="Monogramma MCORE">
-        <div class="halo"></div>
-        <div class="logo-card">
-          <svg viewBox="0 0 640 470" role="img" aria-label="Monogramma NM di MCORE">
-            <defs>
-              <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#31a1ff"/>
-                <stop offset=".52" stop-color="#0b75ff"/>
-                <stop offset="1" stop-color="#0452c9"/>
-              </linearGradient>
-              <linearGradient id="gDark" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#343b46"/>
-                <stop offset="1" stop-color="#171b22"/>
-              </linearGradient>
-            </defs>
-            <path d="M90 360V120Q90 76 132 76Q151 76 170 94L320 258L470 94Q489 76 508 76Q550 76 550 120V360" fill="none" stroke="url(#gDark)" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M118 102L496 362" fill="none" stroke="url(#gBlue)" stroke-width="80" stroke-linecap="round"/>
-          </svg>
+  <section id="mcore" class="line">
+    <div class="shell section-grid">
+      <div class="label">Identità</div>
+      <div>
+        <h2>Un unico nucleo, competenze complementari.</h2>
+        <p class="copy">MCORE nasce come identità professionale indipendente. Il nome richiama il “core”: ciò che resta essenziale quando si eliminano sovrastrutture e complessità inutili. Il monogramma integra le iniziali NM in un segno continuo, esprimendo connessione, metodo e continuità.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="approccio">
+    <div class="shell section-grid">
+      <div class="label">Approccio</div>
+      <div>
+        <h2>Progettare prima di aggiungere.</h2>
+        <p class="copy">Ogni attività parte dalla comprensione del problema, dalla definizione di una struttura chiara e dalla ricerca della soluzione più semplice che possa funzionare bene e crescere nel tempo.</p>
+        <div class="values">
+          <div class="value"><b>Chiarezza</b><p>Obiettivi, vincoli e priorità resi leggibili prima di costruire.</p></div>
+          <div class="value"><b>Precisione</b><p>Attenzione ai dettagli tecnici senza perdere di vista il sistema nel suo insieme.</p></div>
+          <div class="value"><b>Continuità</b><p>Soluzioni pensate per essere mantenibili, adattabili ed evolvere nel tempo.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <div class="shell">
-      <div class="section-kicker">MCORE</div>
-      <h2>Una struttura, più direzioni.</h2>
-      <p class="section-copy">Il nome nasce dall'idea di un nucleo comune. Il monogramma unisce le iniziali NM in un unico segno continuo: identità personale e struttura diventano la stessa cosa. MCORE può così vivere come spazio per progetti, prodotti e sperimentazione senza essere legato a una sola disciplina.</p>
-
-      <div class="pillars" id="principles">
-        <article class="pillar">
-          <div class="num">01</div>
-          <h3>Design</h3>
-          <p>Ridurre il rumore, dare gerarchia alle informazioni e costruire esperienze leggibili.</p>
-        </article>
-        <article class="pillar">
-          <div class="num">02</div>
-          <h3>Technology</h3>
-          <p>Usare la tecnologia come strumento concreto: prodotti digitali, automazioni e infrastruttura.</p>
-        </article>
-        <article class="pillar">
-          <div class="num">03</div>
-          <h3>Systems</h3>
-          <p>Progettare parti che funzionano insieme, con una logica capace di crescere nel tempo.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="manifesto">
-    <div class="shell">
-      <blockquote>Non una collezione di idee. <span>Un unico core da cui farle crescere.</span></blockquote>
+  <section id="contatti" class="line">
+    <div class="shell contact">
+      <div><div class="label">Contatti</div><h2>Parliamone.</h2></div>
+      <p class="contact-note">Per informazioni e richieste professionali, i riferimenti di contatto saranno disponibili qui. Nessun portfolio, nessuna vetrina: questo sito rappresenta l'identità istituzionale di MCORE.</p>
     </div>
   </section>
 </main>
@@ -284,10 +152,9 @@
 <footer>
   <div class="shell footer-row">
     <span>© <span id="year"></span> MCORE · Nicola Maisano</span>
-    <span>Made in Italy</span>
+    <span>Italia</span>
   </div>
 </footer>
-
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
