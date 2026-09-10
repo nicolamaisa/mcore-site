@@ -1,0 +1,15 @@
+services:
+  mcore-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mcore-site
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8088:80"
+    networks:
+      - mcore
+
+networks:
+  mcore:
+    name: mcore-site
