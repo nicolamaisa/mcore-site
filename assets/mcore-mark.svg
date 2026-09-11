@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_2" data-name="Livello 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 250">
+  <defs>
+    <linearGradient id="Sfumatura_senza_nome_402" data-name="Sfumatura senza nome 402" x1="106.32" y1="151.51" x2="196.38" y2="61.96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#17191d"/>
+      <stop offset=".51" stop-color="#464d57"/>
+      <stop offset="1" stop-color="#17191d"/>
+    </linearGradient>
+    <linearGradient id="Sfumatura_senza_nome_388" data-name="Sfumatura senza nome 388" x1="96.48" y1="164.59" x2="96.48" y2="70.54" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#464d57"/>
+      <stop offset="1" stop-color="#17191d"/>
+    </linearGradient>
+    <linearGradient id="Sfumatura_senza_nome_259" data-name="Sfumatura senza nome 259" x1="82.99" y1="39.34" x2="211.45" y2="171.11" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0076fd"/>
+      <stop offset=".54" stop-color="#004da5"/>
+      <stop offset="1" stop-color="#0076fd"/>
+    </linearGradient>
+    <linearGradient id="Sfumatura_senza_nome_19" data-name="Sfumatura senza nome 19" x1="203.52" y1="154.13" x2="203.52" y2="60.08" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#002b5c"/>
+      <stop offset="1" stop-color="#0076fd"/>
+    </linearGradient>
+  </defs>
+  <path d="M150,80.8l27.33,27.33s28.78-28.78,28.78-28.78c0-28.61-30.77-23.89-41.09-13.57l-15.03,15.03.02,54.55-15.03,15.03c-10.32,10.32-41.09,15.04-41.09-13.57,0,0,28.78-28.78,28.78-28.78l27.33,27.33" style="fill: url(#Sfumatura_senza_nome_402);"/>
+  <path d="M134.98,150.38s-13.03,14.72-41.09,14.72-35.89-22.19-35.89-32.19c0,0-.02-49.05-.02-49.05.02-17.49,25.45-15.07,35.91-4.61,0,0,0,57.56,0,57.56,0,28.61,30.77,23.89,41.09,13.57Z" style="fill: url(#Sfumatura_senza_nome_388); stroke: #333; stroke-miterlimit: 10; stroke-width: .25px;"/>
+  <path d="M133.45,64.25h0s-13.43-15.65-39.56-15.65c-19.93,0-35.61,13.7-35.91,35.26.02-17.49,25.45-15.07,35.91-4.61l28.78,28.78,43.87,43.87s13.43,15.65,39.56,15.65c19.93,0,35.61-13.7,35.91-35.26-.02,17.49-25.45,15.07-35.91,4.61-24.22-24.22-48.44-48.44-72.66-72.66Z" style="fill: url(#Sfumatura_senza_nome_259);"/>
+  <path d="M165.02,65.77s13.03-14.72,41.09-14.72,35.89,22.19,35.89,32.19c0,0,.02,49.05.02,49.05-.02,17.49-25.45,15.07-35.91,4.61,0,0,0-57.56,0-57.56,0-28.61-30.77-23.89-41.09-13.57Z" style="fill: url(#Sfumatura_senza_nome_19);"/>
+</svg>
