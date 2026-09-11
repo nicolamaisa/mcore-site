@@ -3,158 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#080b11" />
-  <meta name="description" content="MCORE — realtà indipendente orientata a progettazione, tecnologia e sistemi digitali." />
-  <title>MCORE</title>
+  <meta name="theme-color" content="#f7f4ef" />
+  <meta name="description" content="MCORE — il centro indipendente da cui idee e prodotti digitali prendono direzione." />
+  <title>MCORE — Motion at the core</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <style>
-    :root {
-      --bg:#080b11;
-      --surface:#0d121a;
-      --text:#f3f6fa;
-      --muted:#9aa6b5;
-      --line:rgba(255,255,255,.09);
-      --blue:#0878ff;
-      --max:1120px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      min-height:100vh;
-      background:
-        radial-gradient(circle at 76% 14%,rgba(8,120,255,.12),transparent 28rem),
-        var(--bg);
-      color:var(--text);
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      -webkit-font-smoothing:antialiased;
-    }
-    a{color:inherit;text-decoration:none}
-    .shell{width:min(calc(100% - 40px),var(--max));margin:auto}
-    header{position:fixed;inset:0 0 auto;z-index:10;background:rgba(8,11,17,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-    nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.24em;font-size:.9rem}
-    .brand svg{width:42px;height:30px}
-    .nav{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:.9rem}
-    .nav a:hover{color:var(--text)}
-    main{overflow:hidden}
-    .hero{min-height:88svh;display:grid;align-items:center;padding:130px 0 80px}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(50px,8vw,110px);align-items:center}
-    .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:700;color:#aeb8c6;margin-bottom:22px}
-    h1{margin:0;max-width:10ch;font-size:clamp(3.4rem,7vw,6.8rem);line-height:.94;letter-spacing:-.055em}
-    h1 span{color:var(--blue)}
-    .lead{max-width:650px;margin:28px 0 0;color:var(--muted);font-size:clamp(1.05rem,2vw,1.22rem);line-height:1.72}
-    .mark-wrap{display:grid;place-items:center;min-height:380px}
-    .mark{width:min(100%,470px);filter:drop-shadow(0 30px 60px rgba(0,0,0,.28))}
-    section{padding:96px 0}
-    .line{border-top:1px solid var(--line)}
-    .section-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px}
-    .label{text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:800;color:var(--blue)}
-    h2{margin:0 0 24px;font-size:clamp(2rem,4.5vw,3.8rem);letter-spacing:-.04em;line-height:1.04}
-    p{margin:0;color:var(--muted);line-height:1.75}
-    .copy{max-width:720px;font-size:1.05rem}
-    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:52px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-    .value{background:var(--surface);padding:30px;min-height:190px}
-    .value b{display:block;margin-bottom:14px;font-size:1.08rem}
-    .value p{font-size:.95rem}
-    .contact{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
-    .contact h2{max-width:12ch;margin-bottom:0}
-    .contact-note{max-width:480px}
-    footer{padding:34px 0 46px;color:#7f8a99;font-size:.86rem}
-    .footer-row{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;gap:20px}
-    @media(max-width:800px){
-      .nav a:not(:last-child){display:none}
-      .hero-grid,.section-grid{grid-template-columns:1fr}
-      .hero{padding-top:112px}
-      .mark-wrap{order:-1;min-height:auto}
-      .mark{max-width:390px}
-      .values{grid-template-columns:1fr}
-      .contact{display:block}
-      .contact-note{margin-top:28px}
-      .footer-row{flex-direction:column}
-    }
+    :root{--ink:#10131b;--ink-soft:#505867;--paper:#f7f4ef;--blue:#0878ff;--blue-deep:#0459d2;--graphite:#242932;--accent:#f05227;--line:#bec3ca}
+    *{box-sizing:border-box} html,body{margin:0;width:100%;min-height:100%;overflow:hidden}
+    body{background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+    a,button{color:inherit;font:inherit}button{border:0;background:none;cursor:pointer}.page{min-height:100svh;position:relative;isolation:isolate;overflow:hidden;padding:clamp(26px,3.4vw,54px)}
+    .topbar{height:42px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:3}.brand{display:flex;gap:15px;align-items:center;font-size:clamp(1rem,1.65vw,1.5rem);font-weight:800;letter-spacing:.27em;text-decoration:none}.brand svg{width:92px;height:54px;overflow:visible}.nav{display:flex;gap:clamp(22px,3vw,46px);align-items:center;font-size:.96rem}.nav button,.nav a{padding:7px 0;text-decoration:none;position:relative}.nav button::after,.nav a::after{background:var(--blue);bottom:-2px;content:"";height:2px;left:0;position:absolute;transform:scaleX(0);transform-origin:left;width:100%;transition:transform .25s ease}.nav button:hover::after,.nav a:hover::after,.nav .labs-link::after{transform:scaleX(1)}.side-copy{display:flex;gap:25px;align-items:flex-start;margin-left:40px;color:#687180;font-size:.74rem;font-weight:700;letter-spacing:.31em;line-height:1.65}.side-copy::before{content:"";width:2px;height:72px;background:#9299a3}
+    .hero{display:grid;grid-template-columns:minmax(360px,.94fr) 1.16fr;align-items:center;min-height:calc(100svh - 150px);position:relative;z-index:1}.hero-copy{align-self:center;padding-bottom:34px}.eyebrow,.micro{font-size:.73rem;letter-spacing:.26em;font-weight:700;color:#586273}.eyebrow{margin-bottom:24px}.hero h1{font-size:clamp(4rem,7.4vw,8rem);letter-spacing:-.078em;line-height:.83;margin:0;max-width:7ch}.hero h1 .blue{color:var(--blue)}.hero h1 .dot{color:var(--accent)}.lead{font-size:clamp(1.04rem,1.55vw,1.34rem);line-height:1.38;color:#424a57;max-width:33rem;margin:34px 0 26px}.rule{width:min(100%,560px);height:1px;background:var(--line);position:relative}.rule::before{content:"";position:absolute;background:var(--accent);height:3px;width:54px;left:0;top:-1px}
+    .labs-card{display:grid;grid-template-columns:1px 1fr;column-gap:28px;margin-top:40px;margin-left:min(10vw,135px);max-width:320px;text-decoration:none;transition:transform .25s ease}.labs-card:hover{transform:translateX(8px)}.labs-card::before{content:"";background:#aeb4be;grid-row:1/4}.labs-card strong{font-size:clamp(1.45rem,2.2vw,2.25rem);letter-spacing:-.06em}.labs-card strong span{color:var(--blue)}.labs-card p{margin:11px 0 24px;color:#4d5665;font-size:1.12rem;line-height:1.25}.labs-card .enter{font-weight:700;border-bottom:2px solid var(--accent);padding-bottom:7px;width:max-content}
+    .mark-stage{height:100%;position:relative;display:grid;place-items:center}.mark-stage::before{content:"";position:absolute;width:min(76vw,1040px);aspect-ratio:1.28;border-radius:50%;background:radial-gradient(ellipse at 44% 48%,rgba(8,120,255,.09),transparent 62%);filter:blur(12px)}.mcore-mark{width:min(78vw,940px);filter:drop-shadow(0 30px 30px rgba(19,26,37,.15));position:relative;z-index:1;transition:transform .7s cubic-bezier(.18,.85,.22,1),filter .5s ease}.right-note{position:absolute;right:clamp(28px,7vw,116px);bottom:clamp(110px,12vh,158px);display:flex;gap:24px;color:#697282;font-size:.72rem;font-weight:700;letter-spacing:.28em;line-height:1.62}.right-note::before{content:"";background:var(--accent);height:108px;width:2px}
+    .bottom-left{position:absolute;bottom:clamp(26px,3.4vw,54px);left:clamp(26px,3.4vw,54px);font-size:.7rem;color:#5c6575;letter-spacing:.25em;font-weight:700;line-height:1.7}.footer{position:absolute;bottom:clamp(26px,3.4vw,54px);right:clamp(26px,3.4vw,54px);left:clamp(300px,48vw,850px);border-top:1px solid var(--line);padding-top:12px;color:#626b79;font-size:.72rem;letter-spacing:.16em;text-align:right;white-space:nowrap}
+    .modal{position:fixed;inset:0;background:rgba(16,19,27,.38);backdrop-filter:blur(12px);z-index:10;display:grid;place-items:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s ease}.modal.open{opacity:1;pointer-events:auto}.panel{width:min(100%,680px);background:#fffdf9;padding:clamp(32px,6vw,74px);position:relative;box-shadow:0 30px 90px rgba(0,0,0,.18);transform:translateY(14px);transition:transform .3s ease}.modal.open .panel{transform:none}.close{position:absolute;right:21px;top:16px;font-size:1.8rem;line-height:1;padding:8px}.panel h2{font-size:clamp(2.2rem,5vw,4.8rem);letter-spacing:-.07em;line-height:.9;margin:10px 0 28px}.panel p{font-size:1.1rem;line-height:1.55;color:#4d5665;max-width:44rem}.contact-form{display:grid;gap:15px;margin-top:30px}.contact-form label{display:grid;gap:8px;font-size:.84rem;font-weight:700}.contact-form input,.contact-form textarea{font:inherit;padding:13px;border:1px solid #c8cdd4;background:#fff}.contact-form textarea{min-height:110px;resize:vertical}.submit{background:var(--ink);color:white;padding:14px 20px;width:max-content;font-weight:700}
+    .transition{position:fixed;inset:0;background:var(--paper);z-index:30;display:grid;place-items:center;visibility:hidden;opacity:0;transition:opacity .25s ease}.transition.active{visibility:visible;opacity:1}.loader-mark{width:min(64vw,580px);filter:drop-shadow(0 24px 25px rgba(19,26,37,.15));transform:scale(.72);opacity:0}.transition.active .loader-mark{animation:arrive .55s cubic-bezier(.18,.85,.22,1) forwards, recolor .55s .56s ease forwards, pulse 1s 1.12s ease-in-out infinite}.transition-copy{position:absolute;bottom:12vh;font-size:.72rem;font-weight:700;letter-spacing:.28em;color:#596375;opacity:0}.transition.active .transition-copy{animation:fade .3s .7s forwards}@keyframes arrive{to{transform:scale(1);opacity:1}}@keyframes recolor{to{filter:hue-rotate(130deg) saturate(1.55) drop-shadow(0 24px 25px rgba(19,26,37,.15))}}@keyframes pulse{50%{transform:scale(.94) rotate(2deg)}}@keyframes fade{to{opacity:1}}
+    @media(max-width:840px){html,body{overflow:auto}.page{min-height:100svh;overflow:hidden}.topbar{height:auto;align-items:flex-start}.brand{letter-spacing:.18em}.brand svg{width:63px;height:42px}.nav{gap:15px;font-size:.82rem}.side-copy{display:none}.hero{grid-template-columns:1fr;min-height:auto;padding-top:72px}.hero-copy{z-index:2}.hero h1{font-size:clamp(3.7rem,17vw,6rem);max-width:7.5ch}.lead{margin-top:25px}.mark-stage{position:absolute;right:-42vw;top:24vh;width:112vw;height:65vh;opacity:.95}.mcore-mark{width:130vw}.labs-card{margin-left:0;margin-top:30px}.right-note{display:none}.bottom-left{display:none}.footer{left:26px;font-size:.59rem;letter-spacing:.08em;text-align:left;white-space:normal}.panel{padding:40px 28px}}
   </style>
 </head>
 <body>
-<header>
-  <div class="shell">
-    <nav aria-label="Navigazione principale">
-      <a class="brand" href="#top" aria-label="MCORE home">
-        <svg viewBox="0 0 120 80" aria-hidden="true">
-          <path d="M13 58V25Q13 13 25 13Q31 13 37 19L60 42L83 19Q89 13 95 13Q107 13 107 25V58" fill="none" stroke="#2f3640" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M19 18L101 61" fill="none" stroke="#0878ff" stroke-width="15" stroke-linecap="round"/>
-        </svg>
-        <span>MCORE</span>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="MCORE home">
+        <svg viewBox="0 0 120 80" aria-hidden="true"><defs><linearGradient id="miniDark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#343b46"/><stop offset="1" stop-color="#181c22"/></linearGradient><linearGradient id="miniBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1688ff"/><stop offset=".56" stop-color="#0878ff"/><stop offset="1" stop-color="#0454ca"/></linearGradient></defs><path d="M13 58V25Q13 13 25 13Q31 13 37 19L60 42L83 19Q89 13 95 13Q107 13 107 25V58" fill="none" stroke="url(#miniDark)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 18L101 61" fill="none" stroke="url(#miniBlue)" stroke-width="15" stroke-linecap="round"/></svg><span>MCORE</span>
       </a>
-      <div class="nav">
-        <a href="#mcore">MCORE</a>
-        <a href="#approccio">Approccio</a>
-        <a href="#contatti">Contatti</a>
-      </div>
-    </nav>
-  </div>
-</header>
+      <nav class="nav" aria-label="Navigazione principale">
+        <a class="labs-link" data-labs href="https://labs.mcore.it/?entry=mcore">MCORE Labs</a>
+        <button type="button" data-open="vision">Visione</button>
+        <button type="button" data-open="contact">Contatti</button>
+      </nav>
+      <div class="side-copy">UNA DIREZIONE,<br>MOLTE POSSIBILITÀ.</div>
+    </header>
 
-<main id="top">
-  <section class="hero">
-    <div class="shell hero-grid">
-      <div>
-        <div class="eyebrow">MCORE · Nicola Maisano</div>
-        <h1>Struttura. Precisione. <span>Evoluzione.</span></h1>
-        <p class="lead">MCORE è una realtà indipendente orientata alla progettazione, alla tecnologia e allo sviluppo di sistemi digitali. Un'identità costruita attorno a un principio semplice: partire dal nucleo del problema e costruire da lì.</p>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">MOTION AT THE CORE</div>
+        <h1>Un centro<span class="dot">.</span><br><span class="blue">Idee in</span><br>movimento<span class="dot">.</span></h1>
+        <p class="lead">MCORE crea lo spazio e la continuità.<br>MCORE Labs trasforma le idee in prodotti digitali reali.</p>
+        <div class="rule"></div>
+        <a class="labs-card" data-labs href="https://labs.mcore.it/?entry=mcore">
+          <div><strong>/ MCORE <span>Labs</span></strong><p>Software, prodotti e sistemi digitali.</p><span class="enter">Entra nel laboratorio&nbsp; →</span></div>
+        </a>
       </div>
-      <div class="mark-wrap" aria-label="Monogramma MCORE">
-        <svg class="mark" viewBox="0 0 640 470" role="img" aria-label="Monogramma NM MCORE">
-          <defs>
-            <linearGradient id="dark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b414a"/><stop offset="1" stop-color="#171b22"/></linearGradient>
-            <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1688ff"/><stop offset=".55" stop-color="#0878ff"/><stop offset="1" stop-color="#0454ca"/></linearGradient>
-          </defs>
-          <path d="M100 334V137Q100 82 150 82Q173 82 194 104L320 235L446 104Q467 82 490 82Q540 82 540 137V334Q540 389 490 389Q467 389 446 367L320 235L194 367Q173 389 150 389Q100 389 100 334Z" fill="none" stroke="url(#dark)" stroke-width="78" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M151 103L489 367" fill="none" stroke="url(#blue)" stroke-width="78" stroke-linecap="round"/>
-        </svg>
+      <div class="mark-stage" aria-label="Monogramma MCORE">
+        <svg class="mcore-mark" viewBox="0 0 640 470" role="img" aria-label="Monogramma MCORE"><defs><linearGradient id="dark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3c434f"/><stop offset="1" stop-color="#181c22"/></linearGradient><linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1688ff"/><stop offset=".55" stop-color="#0878ff"/><stop offset="1" stop-color="#0454ca"/></linearGradient></defs><path d="M100 334V137Q100 82 150 82Q173 82 194 104L320 235L446 104Q467 82 490 82Q540 82 540 137V334Q540 389 490 389Q467 389 446 367L320 235L194 367Q173 389 150 389Q100 389 100 334Z" fill="none" stroke="url(#dark)" stroke-width="78" stroke-linecap="round" stroke-linejoin="round"/><path d="M151 103L489 367" fill="none" stroke="url(#blue)" stroke-width="78" stroke-linecap="round"/></svg>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="mcore" class="line">
-    <div class="shell section-grid">
-      <div class="label">Identità</div>
-      <div>
-        <h2>Un unico nucleo, competenze complementari.</h2>
-        <p class="copy">MCORE nasce come identità professionale indipendente. Il nome richiama il “core”: ciò che resta essenziale quando si eliminano sovrastrutture e complessità inutili. Il monogramma integra le iniziali NM in un segno continuo, esprimendo connessione, metodo e continuità.</p>
-      </div>
-    </div>
-  </section>
+    <div class="right-note">UNA DIREZIONE,<br>MOLTE<br>POSSIBILITÀ.</div>
+    <div class="bottom-left">IDEE<br>PRODOTTI<br>CONTINUITÀ</div>
+    <footer class="footer">MCORE di Nicola Maisano · P. IVA IT 05229040232 · mcore@pec.it</footer>
+  </main>
 
-  <section id="approccio">
-    <div class="shell section-grid">
-      <div class="label">Approccio</div>
-      <div>
-        <h2>Progettare prima di aggiungere.</h2>
-        <p class="copy">Ogni attività parte dalla comprensione del problema, dalla definizione di una struttura chiara e dalla ricerca della soluzione più semplice che possa funzionare bene e crescere nel tempo.</p>
-        <div class="values">
-          <div class="value"><b>Chiarezza</b><p>Obiettivi, vincoli e priorità resi leggibili prima di costruire.</p></div>
-          <div class="value"><b>Precisione</b><p>Attenzione ai dettagli tecnici senza perdere di vista il sistema nel suo insieme.</p></div>
-          <div class="value"><b>Continuità</b><p>Soluzioni pensate per essere mantenibili, adattabili ed evolvere nel tempo.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <dialog class="modal" id="vision" aria-labelledby="vision-title"><div class="panel"><button class="close" data-close aria-label="Chiudi">×</button><div class="micro">MOTION AT THE CORE</div><h2 id="vision-title">Il nucleo da cui le idee prendono direzione.</h2><p>MCORE è una struttura indipendente pensata per costruire e accompagnare prodotti digitali nel tempo. Non un contenitore di promesse: un centro capace di dare metodo, continuità e responsabilità alle idee che meritano di crescere.</p></div></dialog>
+  <dialog class="modal" id="contact" aria-labelledby="contact-title"><div class="panel"><button class="close" data-close aria-label="Chiudi">×</button><div class="micro">CONTATTI</div><h2 id="contact-title">Parliamone.</h2><p>Per collaborazioni, proposte o conversazioni intorno a nuovi prodotti digitali.</p><form class="contact-form" action="mailto:info@mcore.it" method="post" enctype="text/plain"><label>Nome<input required name="name" autocomplete="name"></label><label>Email<input required name="email" type="email" autocomplete="email"></label><label>Messaggio<textarea required name="message"></textarea></label><button class="submit" type="submit">Invia email →</button></form></div></dialog>
 
-  <section id="contatti" class="line">
-    <div class="shell contact">
-      <div><div class="label">Contatti</div><h2>Parliamone.</h2></div>
-      <p class="contact-note">Per informazioni e richieste professionali, i riferimenti di contatto saranno disponibili qui. Nessun portfolio, nessuna vetrina: questo sito rappresenta l'identità istituzionale di MCORE.</p>
-    </div>
-  </section>
-</main>
+  <div class="transition" id="labs-transition" aria-live="polite"><svg class="loader-mark" viewBox="0 0 640 470" aria-hidden="true"><defs><linearGradient id="tdark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3c434f"/><stop offset="1" stop-color="#181c22"/></linearGradient><linearGradient id="tblue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1688ff"/><stop offset=".55" stop-color="#0878ff"/><stop offset="1" stop-color="#0454ca"/></linearGradient></defs><path d="M100 334V137Q100 82 150 82Q173 82 194 104L320 235L446 104Q467 82 490 82Q540 82 540 137V334Q540 389 490 389Q467 389 446 367L320 235L194 367Q173 389 150 389Q100 389 100 334Z" fill="none" stroke="url(#tdark)" stroke-width="78" stroke-linecap="round" stroke-linejoin="round"/><path d="M151 103L489 367" fill="none" stroke="url(#tblue)" stroke-width="78" stroke-linecap="round"/></svg><div class="transition-copy">ENTERING MCORE LABS</div></div>
 
-<footer>
-  <div class="shell footer-row">
-    <span>© <span id="year"></span> MCORE · Nicola Maisano</span>
-    <span>Italia</span>
-  </div>
-</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+    const modals=document.querySelectorAll('.modal');
+    document.querySelectorAll('[data-open]').forEach(button=>button.addEventListener('click',()=>document.getElementById(button.dataset.open).classList.add('open')));
+    document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>button.closest('.modal').classList.remove('open')));
+    modals.forEach(modal=>modal.addEventListener('click',event=>{if(event.target===modal)modal.classList.remove('open')}));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape')modals.forEach(modal=>modal.classList.remove('open'))});
+    document.querySelectorAll('[data-labs]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();const transition=document.getElementById('labs-transition');transition.classList.add('active');window.setTimeout(()=>window.location.assign(link.href),1650)}));
+  </script>
 </body>
 </html>
