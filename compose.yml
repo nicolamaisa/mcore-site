@@ -5,11 +5,13 @@ services:
       dockerfile: Dockerfile
     container_name: mcore-site
     restart: unless-stopped
-    ports:
-      - "127.0.0.1:8088:80"
     networks:
       - mcore
+      - nginx
 
 networks:
   mcore:
     name: mcore-site
+  nginx:
+    name: nginx
+    external: true
