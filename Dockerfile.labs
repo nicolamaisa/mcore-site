@@ -2,7 +2,7 @@ FROM nginx:1.27-alpine
 
 COPY labs/nginx.conf /etc/nginx/conf.d/default.conf
 COPY labs/index.html /usr/share/nginx/html/index.html
-COPY assets/ /usr/share/nginx/html/assets/
+COPY public/logo-mcore-labs.svg /usr/share/nginx/html/assets/mcore-labs-logo.svg
 
 EXPOSE 80
 
