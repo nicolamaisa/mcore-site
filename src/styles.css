@@ -469,6 +469,33 @@ h1 {
   font-weight: 700;
 }
 
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: .65;
+}
+
+.honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.contact-status {
+  grid-column: 1/-1;
+  margin: 0;
+  font-size: .9rem;
+  line-height: 1.4;
+}
+
+.contact-status.success {
+  color: #08753c;
+}
+
+.contact-status.error {
+  color: #b32424;
+}
+
 .labs-transition {
   position: fixed;
   z-index: 200;
