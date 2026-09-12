@@ -52,7 +52,7 @@ export default function App() {
       <main id="main" className="scene">
         <section className="copy-column" aria-labelledby="hero-title">
           <p className="eyebrow">Motion at the core</p>
-          <h1 id="hero-title">Un centro<span className="dot">.</span><br /><span className="blue">Idee in</span><br />movimento<span className="dot">.</span></h1>
+          <h1 id="hero-title">Il centro<span className="dot">.</span><br /><span className="blue">Che mette</span><br />in moto il resto<span className="dot">.</span></h1>
           <p className="supporting-copy">MCORE crea lo spazio e la continuità.<br />MCORE Labs trasforma le idee in prodotti digitali reali.</p>
           <div className="divider" aria-hidden="true"><span /></div>
           <div className="labs-entry">
