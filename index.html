@@ -1,88 +1,17 @@
 <!doctype html>
 <html lang="it">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f7f4ef" />
-  <meta name="description" content="MCORE — il centro indipendente da cui idee e prodotti digitali prendono direzione." />
-  <title>MCORE — Motion at the core</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <style>
-    :root{--ink:#10131b;--ink-soft:#505867;--paper:#f7f4ef;--blue:#0878ff;--blue-deep:#0459d2;--graphite:#242932;--accent:#f05227;--line:#bec3ca}
-    *{box-sizing:border-box} html,body{margin:0;width:100%;min-height:100%;overflow:hidden}
-    body{background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-    a,button{color:inherit;font:inherit}button{border:0;background:none;cursor:pointer}.page{min-height:100svh;position:relative;isolation:isolate;overflow:hidden;padding:clamp(26px,3.4vw,54px)}
-    .topbar{height:42px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:3}.brand{display:flex;gap:15px;align-items:center;font-size:clamp(1rem,1.65vw,1.5rem);font-weight:800;letter-spacing:.27em;text-decoration:none}.brand-mark{width:52px;height:42px;display:grid;place-items:center}.brand-mark img{width:100%;height:100%;object-fit:contain;display:block}.brand>span{white-space:nowrap}.nav{display:flex;gap:clamp(22px,3vw,46px);align-items:center;font-size:.96rem}.nav button,.nav a{padding:7px 0;text-decoration:none;position:relative}.nav button::after,.nav a::after{background:var(--blue);bottom:-2px;content:"";height:2px;left:0;position:absolute;transform:scaleX(0);transform-origin:left;width:100%;transition:transform .25s ease}.nav button:hover::after,.nav a:hover::after,.nav .labs-link::after{transform:scaleX(1)}.side-copy{display:flex;gap:25px;align-items:flex-start;margin-left:40px;color:#687180;font-size:.74rem;font-weight:700;letter-spacing:.31em;line-height:1.65}.side-copy::before{content:"";width:2px;height:72px;background:#9299a3}
-    .hero{display:grid;grid-template-columns:minmax(360px,.94fr) 1.16fr;align-items:center;min-height:calc(100svh - 150px);position:relative;z-index:1}.hero-copy{align-self:center;padding-bottom:34px}.eyebrow,.micro{font-size:.73rem;letter-spacing:.26em;font-weight:700;color:#586273}.eyebrow{margin-bottom:24px}.hero h1{font-size:clamp(4rem,7.4vw,8rem);letter-spacing:-.078em;line-height:.83;margin:0;max-width:7ch}.hero h1 .blue{color:var(--blue)}.hero h1 .dot{color:var(--accent)}.lead{font-size:clamp(1.04rem,1.55vw,1.34rem);line-height:1.38;color:#424a57;max-width:33rem;margin:34px 0 26px}.rule{width:min(100%,560px);height:1px;background:var(--line);position:relative}.rule::before{content:"";position:absolute;background:var(--accent);height:3px;width:54px;left:0;top:-1px}
-    .labs-card{display:grid;grid-template-columns:1px 1fr;column-gap:28px;margin-top:40px;margin-left:min(10vw,135px);max-width:320px;text-decoration:none;transition:transform .25s ease}.labs-card:hover{transform:translateX(8px)}.labs-card::before{content:"";background:#aeb4be;grid-row:1/4}.labs-card strong{font-size:clamp(1.45rem,2.2vw,2.25rem);letter-spacing:-.06em}.labs-card strong span{color:var(--blue)}.labs-card p{margin:11px 0 24px;color:#4d5665;font-size:1.12rem;line-height:1.25}.labs-card .enter{font-weight:700;border-bottom:2px solid var(--accent);padding-bottom:7px;width:max-content}
-    .mark-stage{height:100%;position:relative;display:grid;place-items:center}.mark-stage::before{content:"";position:absolute;width:min(76vw,1040px);aspect-ratio:1.28;border-radius:50%;background:radial-gradient(ellipse at 44% 48%,rgba(8,120,255,.09),transparent 62%);filter:blur(12px)}.mcore-mark{width:min(78vw,940px);filter:drop-shadow(0 30px 30px rgba(19,26,37,.15));position:relative;z-index:1;transition:transform .7s cubic-bezier(.18,.85,.22,1),filter .5s ease}.mcore-mark img{width:100%;height:auto;display:block}.right-note{position:absolute;right:clamp(28px,7vw,116px);bottom:clamp(110px,12vh,158px);display:flex;gap:24px;color:#697282;font-size:.72rem;font-weight:700;letter-spacing:.28em;line-height:1.62}.right-note::before{content:"";background:var(--accent);height:108px;width:2px}
-    .bottom-left{position:absolute;bottom:clamp(26px,3.4vw,54px);left:clamp(26px,3.4vw,54px);font-size:.7rem;color:#5c6575;letter-spacing:.25em;font-weight:700;line-height:1.7}.footer{position:absolute;bottom:clamp(26px,3.4vw,54px);right:clamp(26px,3.4vw,54px);left:clamp(300px,48vw,850px);border-top:1px solid var(--line);padding-top:12px;color:#626b79;font-size:.72rem;letter-spacing:.16em;text-align:right;white-space:nowrap}
-    .modal{position:fixed;inset:0;background:rgba(16,19,27,.38);backdrop-filter:blur(12px);z-index:10;display:grid;place-items:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s ease}.modal.open{opacity:1;pointer-events:auto}.panel{width:min(100%,680px);background:#fffdf9;padding:clamp(32px,6vw,74px);position:relative;box-shadow:0 30px 90px rgba(0,0,0,.18);transform:translateY(14px);transition:transform .3s ease}.modal.open .panel{transform:none}.close{position:absolute;right:21px;top:16px;font-size:1.8rem;line-height:1;padding:8px}.panel h2{font-size:clamp(2.2rem,5vw,4.8rem);letter-spacing:-.07em;line-height:.9;margin:10px 0 28px}.panel p{font-size:1.1rem;line-height:1.55;color:#4d5665;max-width:44rem}.contact-form{display:grid;gap:15px;margin-top:30px}.contact-form label{display:grid;gap:8px;font-size:.84rem;font-weight:700}.contact-form input,.contact-form textarea{font:inherit;padding:13px;border:1px solid #c8cdd4;background:#fff}.contact-form textarea{min-height:110px;resize:vertical}.submit{background:var(--ink);color:white;padding:14px 20px;width:max-content;font-weight:700}
-    .transition{position:fixed;inset:0;background:var(--paper);z-index:30;display:grid;place-items:center;visibility:hidden;opacity:0;transition:opacity .2s ease}.transition.active{visibility:visible;opacity:1}.lottie-player{width:min(62vw,620px);height:min(58vw,560px)}.transition-copy{position:absolute;bottom:12vh;font-size:.72rem;font-weight:700;letter-spacing:.28em;color:#596375;opacity:0}.transition.active .transition-copy{animation:fade .3s 1.1s forwards}@keyframes fade{to{opacity:1}}
-    @media(max-width:840px){html,body{overflow:auto}.page{min-height:100svh;overflow:hidden}.topbar{height:auto;align-items:flex-start}.brand{letter-spacing:.18em}.brand svg{width:63px;height:42px}.nav{gap:15px;font-size:.82rem}.side-copy{display:none}.hero{grid-template-columns:1fr;min-height:auto;padding-top:72px}.hero-copy{z-index:2}.hero h1{font-size:clamp(3.7rem,17vw,6rem);max-width:7.5ch}.lead{margin-top:25px}.mark-stage{position:absolute;right:-42vw;top:24vh;width:112vw;height:65vh;opacity:.95}.mcore-mark{width:130vw}.labs-card{margin-left:0;margin-top:30px}.right-note{display:none}.bottom-left{display:none}.footer{left:26px;font-size:.59rem;letter-spacing:.08em;text-align:left;white-space:normal}.panel{padding:40px 28px}}
-  </style>
-</head>
-<body>
-  <main class="page">
-    <header class="topbar">
-      <a class="brand" href="/" aria-label="MCORE home"><span class="brand-mark"><img src="assets/mcore-mark.svg" alt=""></span><span>MCORE</span></a>
-      <nav class="nav" aria-label="Navigazione principale">
-        <a class="labs-link" data-labs href="https://labs.mcore.it/?entry=mcore">MCORE Labs</a>
-        <button type="button" data-open="vision">Visione</button>
-        <button type="button" data-open="contact">Contatti</button>
-      </nav>
-      <div class="side-copy">UNA DIREZIONE,<br>MOLTE POSSIBILITÀ.</div>
-    </header>
-
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow">MOTION AT THE CORE</div>
-        <h1>Un centro<span class="dot">.</span><br><span class="blue">Idee in</span><br>movimento<span class="dot">.</span></h1>
-        <p class="lead">MCORE crea lo spazio e la continuità.<br>MCORE Labs trasforma le idee in prodotti digitali reali.</p>
-        <div class="rule"></div>
-        <a class="labs-card" data-labs href="https://labs.mcore.it/?entry=mcore">
-          <div><strong>/ MCORE <span>Labs</span></strong><p>Software, prodotti e sistemi digitali.</p><span class="enter">Entra nel laboratorio&nbsp; →</span></div>
-        </a>
-      </div>
-      <div class="mark-stage" aria-label="Monogramma MCORE">
-        <div class="mcore-mark"><img src="assets/mcore-mark.svg" alt="Monogramma MCORE"></div>
-      </div>
-    </section>
-
-    <div class="right-note">UNA DIREZIONE,<br>MOLTE<br>POSSIBILITÀ.</div>
-    <div class="bottom-left">IDEE<br>PRODOTTI<br>CONTINUITÀ</div>
-    <footer class="footer">MCORE di Nicola Maisano · P. IVA IT 05229040232 · mcore@pec.it</footer>
-  </main>
-
-  <dialog class="modal" id="vision" aria-labelledby="vision-title"><div class="panel"><button class="close" data-close aria-label="Chiudi">×</button><div class="micro">MOTION AT THE CORE</div><h2 id="vision-title">Il nucleo da cui le idee prendono direzione.</h2><p>MCORE è una struttura indipendente pensata per costruire e accompagnare prodotti digitali nel tempo. Non un contenitore di promesse: un centro capace di dare metodo, continuità e responsabilità alle idee che meritano di crescere.</p></div></dialog>
-  <dialog class="modal" id="contact" aria-labelledby="contact-title"><div class="panel"><button class="close" data-close aria-label="Chiudi">×</button><div class="micro">CONTATTI</div><h2 id="contact-title">Parliamone.</h2><p>Per collaborazioni, proposte o conversazioni intorno a nuovi prodotti digitali.</p><form class="contact-form" action="mailto:info@mcore.it" method="post" enctype="text/plain"><label>Nome<input required name="name" autocomplete="name"></label><label>Email<input required name="email" type="email" autocomplete="email"></label><label>Messaggio<textarea required name="message"></textarea></label><button class="submit" type="submit">Invia email →</button></form></div></dialog>
-
-  <div class="transition" id="labs-transition" aria-live="polite"><div class="lottie-player" id="lottie-transition" aria-hidden="true"></div><div class="transition-copy">ENTERING MCORE LABS</div></div>
-
-  <script src="assets/lottie.min.js"></script>
-  <script>
-    const modals=document.querySelectorAll('.modal');
-    document.querySelectorAll('[data-open]').forEach(button=>button.addEventListener('click',()=>document.getElementById(button.dataset.open).classList.add('open')));
-    document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>button.closest('.modal').classList.remove('open')));
-    modals.forEach(modal=>modal.addEventListener('click',event=>{if(event.target===modal)modal.classList.remove('open')}));
-    document.addEventListener('keydown',event=>{if(event.key==='Escape')modals.forEach(modal=>modal.classList.remove('open'));});
-    window.addEventListener('load',()=>{
-      const animation=window.lottie?.loadAnimation({
-        container:document.getElementById('lottie-transition'),
-        renderer:'svg',
-        loop:false,
-        autoplay:false,
-        path:'assets/mcore-to-labs.json',
-        assetsPath:'assets/',
-        rendererSettings:{preserveAspectRatio:'xMidYMid meet'}
-      });
-      document.querySelectorAll('[data-labs]').forEach(link=>link.addEventListener('click',event=>{
-        event.preventDefault();
-        document.getElementById('labs-transition').classList.add('active');
-        animation?.goToAndPlay(0,true);
-        window.setTimeout(()=>window.location.assign(link.href),2200);
-      }));
-    });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f4ef" />
+    <meta name="description" content="MCORE crea spazio e continuità per iniziative digitali indipendenti." />
+    <title>MCORE — Idee in movimento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
