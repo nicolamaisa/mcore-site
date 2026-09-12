@@ -87,7 +87,7 @@ function Modal({ type, onClose }: { type: Exclude<ModalName, null>; onClose: () 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
-    const payload = Object.fromEntries(new FormData(form).entries());
+    const payload = { ...Object.fromEntries(new FormData(form).entries()), source: "MCORE" };
     setSending(true);
     setContactStatus("idle");
 
