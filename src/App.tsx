@@ -81,12 +81,30 @@ export default function App() {
 }
 
 function Modal({ type, onClose }: { type: Exclude<ModalName, null>; onClose: () => void }) {
-  function submit(event: FormEvent<HTMLFormElement>) {
+  const [sending, setSending] = useState(false);
+  const [contactStatus, setContactStatus] = useState<"idle" | "success" | "error">("idle");
+
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const subject = encodeURIComponent(`Contatto MCORE — ${String(data.get("name") ?? "")}`);
-    const body = encodeURIComponent(`Nome: ${String(data.get("name") ?? "")}\nEmail: ${String(data.get("email") ?? "")}\n\n${String(data.get("message") ?? "")}`);
-    window.location.href = `mailto:info@mcore.it?subject=${subject}&body=${body}`;
+    const form = event.currentTarget;
+    const payload = Object.fromEntries(new FormData(form).entries());
+    setSending(true);
+    setContactStatus("idle");
+
+    try {
+      const response = await fetch("/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) throw new Error("Contact form submission failed");
+      form.reset();
+      setContactStatus("success");
+    } catch {
+      setContactStatus("error");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -111,7 +129,10 @@ function Modal({ type, onClose }: { type: Exclude<ModalName, null>; onClose: () 
               <label>Nome<input name="name" required autoComplete="name" /></label>
               <label>Email<input name="email" type="email" required autoComplete="email" /></label>
               <label>Messaggio<textarea name="message" required rows={3} /></label>
-              <button type="submit">Invia il messaggio <span aria-hidden="true">→</span></button>
+              <label className="honeypot" aria-hidden="true">Azienda<input name="company" tabIndex={-1} autoComplete="off" /></label>
+              <button type="submit" disabled={sending}>{sending ? "Invio in corso…" : <>Invia il messaggio <span aria-hidden="true">→</span></>}</button>
+              {contactStatus === "success" && <p className="contact-status success">Messaggio inviato. Ti risponderemo presto.</p>}
+              {contactStatus === "error" && <p className="contact-status error">Invio non riuscito. Scrivici a info@mcore.it.</p>}
             </form>
           </>
         )}
