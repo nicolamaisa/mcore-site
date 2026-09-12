@@ -25,7 +25,7 @@
 <body>
   <main class="page">
     <header class="topbar">
-      <a class="brand" href="/" aria-label="MCORE home"><span class="brand-mark"><img src="assets/mcore-logo.svg" alt=""></span><span>MCORE</span></a>
+      <a class="brand" href="/" aria-label="MCORE home"><span class="brand-mark"><img src="assets/mcore-mark.svg" alt=""></span><span>MCORE</span></a>
       <nav class="nav" aria-label="Navigazione principale">
         <a class="labs-link" data-labs href="https://labs.mcore.it/?entry=mcore">MCORE Labs</a>
         <button type="button" data-open="vision">Visione</button>
@@ -65,7 +65,7 @@
     document.querySelectorAll('[data-open]').forEach(button=>button.addEventListener('click',()=>document.getElementById(button.dataset.open).classList.add('open')));
     document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>button.closest('.modal').classList.remove('open')));
     modals.forEach(modal=>modal.addEventListener('click',event=>{if(event.target===modal)modal.classList.remove('open')}));
-    document.addEventListener('keydown',event=>{if(event.key==='Escape')modals.forEach(modal=>modal.classList.remove('open')}));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape')modals.forEach(modal=>modal.classList.remove('open'));});
     window.addEventListener('load',()=>{
       const animation=window.lottie?.loadAnimation({
         container:document.getElementById('lottie-transition'),
