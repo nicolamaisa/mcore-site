@@ -8,8 +8,8 @@
   "nm": "MCORE to MCORE Labs",
   "ddd": 0,
   "assets": [
-    {"id":"mcore-mark","w":300,"h":250,"u":"assets/","p":"mcore-mark.svg","e":0},
-    {"id":"labs-mark","w":300,"h":250,"u":"assets/","p":"mcore-labs-mark.svg","e":0}
+    {"id":"mcore-mark","w":300,"h":250,"u":"","p":"mcore-mark.svg","e":0},
+    {"id":"labs-mark","w":300,"h":250,"u":"","p":"mcore-labs-mark.svg","e":0}
   ],
   "layers": [
     {
