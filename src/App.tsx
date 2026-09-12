@@ -42,11 +42,11 @@ export default function App() {
 
         <nav className="main-nav" aria-label="Navigazione principale">
           <a href={LABS_URL} onClick={enterLabs}>MCORE Labs</a>
-          <button type="button" onClick={() => setModal("vision")}>Visione</button>
+          <button type="button" onClick={() => setModal("vision")}>Chi siamo</button>
           <button type="button" onClick={() => setModal("contact")}>Contatti</button>
         </nav>
 
-        <p className="editorial-label">Una direzione,<br />molte possibilità.</p>
+        <p className="editorial-label">Prodotti Digitali.<br />Sviluppo Software.</p>
       </header>
 
       <main id="main" className="scene">
@@ -64,7 +64,7 @@ export default function App() {
 
         <div className="mark-column" aria-hidden="true">
           <AnimatedMcoreLogo />
-          <p>Un centro,<br />molte possibilità.</p>
+          <p>Indipendente,<br />per scelta.</p>
         </div>
       </main>
 
@@ -93,11 +93,15 @@ function Modal({ type, onClose }: { type: Exclude<ModalName, null>; onClose: () 
     <div className="modal-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
       <section className="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <button className="modal-close" type="button" onClick={onClose} aria-label="Chiudi">×</button>
-        <p className="eyebrow">MCORE / {type === "vision" ? "Visione" : "Contatti"}</p>
+        <p className="eyebrow">MCORE / {type === "vision" ? "Chi Siamo" : "Contatti"}</p>
         {type === "vision" ? (
           <>
-            <h2 id="modal-title">Una struttura per far crescere le idee<span className="dot">.</span></h2>
-            <p className="modal-copy">MCORE è una struttura indipendente pensata per dare spazio, continuità e responsabilità a idee che meritano di crescere.</p>
+            <h2 id="modal-title"><span className="blue">MCORE</span>, senza sovrastrutture<span className="dot">.</span></h2>
+            <p className="modal-copy">MCORE di Nicola Maisano è una realtà indipendente italiana attiva nello sviluppo di software e prodotti digitali.<br /><br />
+            Nasce per costruire e far crescere progetti proprietari nel tempo, con attenzione al prodotto, alla tecnologia e all’utilità concreta.<br /><br />
+            MCORE Labs è il primo spazio pubblico del progetto: il laboratorio in cui prendono forma software, strumenti e nuovi prodotti digitali.<br /><br />
+            Accanto ai propri prodotti, MCORE può collaborare su selezionati progetti di sviluppo software e consulenza tecnica.
+            </p>
           </>
         ) : (
           <>
