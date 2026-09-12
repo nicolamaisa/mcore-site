@@ -53,7 +53,7 @@ export default function App() {
         <section className="copy-column" aria-labelledby="hero-title">
           <p className="eyebrow">Motion at the core</p>
           <h1 id="hero-title">Il centro<span className="dot">.</span><br /><span className="blue">Che mette</span><br />in moto il resto<span className="dot">.</span></h1>
-          <p className="supporting-copy">MCORE crea lo spazio e la continuità.<br />MCORE Labs trasforma le idee in prodotti digitali reali.</p>
+          <p className="supporting-copy">MCORE è una realtà indipendente che crea e sviluppa prodotti digitali.<br />Dà alle idee il tempo, la struttura e la continuità per diventare reali.</p>
           <div className="divider" aria-hidden="true"><span /></div>
           <div className="labs-entry">
             <h2><span>/</span> MCORE <strong>Labs</strong></h2>
@@ -64,7 +64,7 @@ export default function App() {
 
         <div className="mark-column" aria-hidden="true">
           <AnimatedMcoreLogo />
-          <p>Una direzione,<br />molte possibilità.</p>
+          <p>Un centro,<br />molte possibilità.</p>
         </div>
       </main>
 
