@@ -9,6 +9,16 @@ services:
       - mcore
       - nginx
 
+  mcore-labs:
+    build:
+      context: .
+      dockerfile: Dockerfile.labs
+    container_name: mcore-labs
+    restart: unless-stopped
+    networks:
+      - mcore
+      - nginx
+
 networks:
   mcore:
     name: mcore-site
